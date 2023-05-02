@@ -1,0 +1,40 @@
+.navbar {
+    width: 100%;
+    height: 80px;
+    background-color: rgb(19,19,19);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.links {
+    margin-right: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.links a {
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    margin-left: 20px;
+}
+
+.cart-span {
+    background-color: rgb(140, 8, 210);
+    border-radius: 50px;
+    padding: 10px;
+}
+
+@media (max-width: 390px) {
+    .headerTitle {
+        font-size: 20px;
+    }
+
+    .link{
+        font-size: 20px;
+    }
+
+    
+}

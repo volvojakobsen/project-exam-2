@@ -1,0 +1,17 @@
+.footer{
+    margin-top: auto;
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    color: aliceblue;
+}
+
+.contact-btn {
+    margin-bottom: 20px;
+}
+
+@media (max-width: 350px) {
+    .footer {
+        flex-direction: column;
+    }
+}
