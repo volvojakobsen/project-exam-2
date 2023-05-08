@@ -14,6 +14,7 @@ export const Navbar = () => {
             <h1 className="headerTitle">Holidaze</h1>
             <div className="links">
                 <Link  to="/"> <p className="link">Home</p> </Link>
+                <Link  to="/loginCustomer"> <p className="link">Login</p> </Link>
             </div>
         </div>
     )
