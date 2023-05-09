@@ -13,11 +13,16 @@ export const LoginCustomer = () => {
               <input type="text" name="Username" />
               <label htmlFor="Password">Password:</label>
               <input type="text" name="Password"/>
+              <button>Login</button>
           </form>
         </div>
-        <div>
+        <div className="center">
+            <h2>Are you a venue manager?</h2>
+            <p>Login as venue manager here</p>
+        </div>
+        <div className="center">
             <h2>Register new account</h2>
-            <Link  to="/RegisterCustomer"> <p className="link">Register as customer</p> </Link>
+            <Link  to="/Register"> <p className="link">Register as customer</p> </Link>
             <Link  to="/RegisterManager"> <p className="link">Register as Venue-Manager</p> </Link>
         </div>
         
