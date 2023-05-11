@@ -5,6 +5,7 @@ import { Footer } from './components/footer';
 import { VenueInfo } from "./pages/venueInfo/venueInfo";
 import { LoginCustomer } from "./pages/login-customer/LoginCustomer";
 import { Register } from "./pages/register/register";
+import { Profile } from "./pages/profile/profile";
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
           <Route path="/venueInfo/:id" element={<VenueInfo />} />
           <Route path="/loginCustomer" element={<LoginCustomer />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
         <Footer />
       </Router>
