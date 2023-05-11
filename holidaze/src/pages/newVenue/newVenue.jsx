@@ -21,8 +21,11 @@ export const NewVenue = () => {
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
     const [media, setMedia] = useState([]);
-    const [price, setPrice] = useState(Number);
-    const [maxGuests, setMaxGuests] = useState(Number);
+    const [priceRaw, setPriceRaw] = useState(Number);
+    const [maxGuestsRaw, setMaxGuestsRaw] = useState(Number);
+
+    const price = parseInt(priceRaw);
+    const maxGuests = parseInt(maxGuestsRaw);
 
     const createVenueURL = "https://api.noroff.dev/api/v1/holidaze/venues";
     const method = "post";
@@ -37,7 +40,8 @@ export const NewVenue = () => {
             try {
               const response = await fetch(createVenueURL, {
                   headers: {
-                      "Content-Type": "application/json"
+                      "Content-Type": "application/json",
+                      "Authorization": `bearer ${localStorage.getItem("accessToken")}`
                   },
                   method,
                   body: JSON.stringify(formValues)
@@ -68,13 +72,13 @@ export const NewVenue = () => {
         <label htmlFor="name">name:</label>
               <input type="text" name="name" required onChange={(e) => setName(e.target.value)}/>
               <label htmlFor="description">description:</label>
-              <textarea required name="description" onChange={(e) => setDescription(e.target.value.toString())}></textarea>
+              <textarea required name="description" onChange={(e) => setDescription(e.target.value.toString())}/>
               <label htmlFor="media">media:</label>
               <input type="url" name="media" onChange={(e) => setMedia(e.target.value)}/>
               <label htmlFor="price">price:</label>
-              <input type="number" name="price" required  onChange={(e) => setPrice(e.target.value)}/>
+              <input type="number" name="price" required  onChange={(e) => setPriceRaw(e.target.value)}/>
               <label htmlFor="maxGuests">maxGuests:</label>
-              <input type="number" name="maxGuests" required onChange={(e) => setMaxGuests(e.target.value)} />
+              <input type="number" name="maxGuests" required onChange={(e) => setMaxGuestsRaw(e.target.value)} />
               <button type="submit">Submit</button>
         </Form>
         </VenueForm>

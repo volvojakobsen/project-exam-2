@@ -14,7 +14,10 @@ const Venue = styled.div`
 `;
 
 
-const url = 'https://api.noroff.dev/api/v1/holidaze/venues';
+
+const url = `https://api.noroff.dev/api/v1/holidaze/venues?sortOrder=asc`;
+
+
 
 
 export const Home = () => {
@@ -40,6 +43,8 @@ export const Home = () => {
 
     getData();
   }, []);
+
+
 
   console.log(venues);
   if (isLoading) {
