@@ -6,6 +6,7 @@ import { VenueInfo } from "./pages/venueInfo/venueInfo";
 import { LoginCustomer } from "./pages/login-customer/LoginCustomer";
 import { Register } from "./pages/register/register";
 import { Profile } from "./pages/profile/profile";
+import { NewVenue } from "./pages/newVenue/newVenue.jsx"
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
           <Route path="/loginCustomer" element={<LoginCustomer />} />
           <Route path="/register" element={<Register />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/newVenue" element={<NewVenue />} />
         </Routes>
         <Footer />
       </Router>

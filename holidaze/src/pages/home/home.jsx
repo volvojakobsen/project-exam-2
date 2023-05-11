@@ -1,6 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { Venues } from "./venues";
 import "./home.css";
+import styled from 'styled-components';
+
+const Venue = styled.div`
+    width: 400px;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    border: 3px solid black;
+    justify-content: center;
+    align-items: center;
+`;
 
 
 const url = 'https://api.noroff.dev/api/v1/holidaze/venues';

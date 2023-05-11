@@ -6,15 +6,6 @@
     gap: 2rem;
 }
 
-.venue {
-    width: 400px;
-    min-height: 600px;
-    display: flex;
-    flex-direction: column;
-    border: 3px solid black;
-    justify-content: center;
-    align-items: center;
-}
 
 .venue-img {
     max-height: 400px;
