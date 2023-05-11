@@ -17,6 +17,7 @@ export const Navbar = () => {
                 <Link  to="/"> <p className="link">Home</p> </Link>
                 <Link  to="/profile"> <p>{localStorage.getItem("name")}</p> </Link>
                 <Link  to="/loginCustomer"> <p className="link login">Login</p> </Link>
+                <Link  to="/newVenue"> <p>New Venue</p> </Link>
             </div>
         </div>
     )

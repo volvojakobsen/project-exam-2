@@ -16,7 +16,7 @@ justify-content: center;
 align-items: center;
 `
 
-export const NewVenue = () => {
+export const EditVenue = () => {
 
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
