@@ -1,5 +1,18 @@
 import React, {useState, useEffect, useContext} from "react";
 import { useParams } from "react-router-dom";
+import styled from "styled-components";
+
+const Content = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+`;
+
+const Row = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+`;
 
 
 
@@ -15,7 +28,7 @@ export const VenueInfo = () => {
        try {
          setIsError(false);
          setIsLoading(true);
-         const response = await fetch(`https://api.noroff.dev/api/v1/holidaze/venues/${id.id}`);
+         const response = await fetch(`https://api.noroff.dev/api/v1/holidaze/venues/${id.id}?_bookings=true`);
          const json = await response.json();
          setSingleVenue(json);
          setIsLoading(false);
@@ -40,33 +53,18 @@ export const VenueInfo = () => {
    }
 
    return <>
-    <div className="container">
-        <div className="singleItem">
-            <img src={singleVenue.media} className="singleProductImage" alt="" srcSet="" />
-            <div className="details">
-               <h2>{singleVenue.name}</h2>
-              <div className="pricing">
-                <h3>Price: ${singleVenue.price}</h3>
-              </div>
-              <h1>Rating: {singleVenue.rating} of 5</h1>
-              <div className="description">
-              <p>{singleVenue.description}</p>
-              </div>
-              <div>
-              <h4>Reviews</h4>
-              {singleVenue.reviews && singleVenue.reviews.map(post =>{
-                return (
-                  <div className="singleReview" key={post.id}>
-                    <div className="name"><div>By: {post.username}</div>Rated it: {post.rating} of 5.</div>
-                    <div className="comment">{post.description}</div>
-                  </div>
-                );
-
-              })};
-              </div>
-              
-            </div>
-        </div>
+   <Content>
+    <div>
+      <img src={singleVenue.media} alt="venue-image" srcSet="" />
     </div>
-    </>
+    <div>
+      <h1>{singleVenue.name}</h1>
+      <Row>
+        <h2>Price: {singleVenue.price}</h2>
+        <p>max guests: {singleVenue.maxGuests}</p>
+      </Row>
+      <p>{singleVenue.description}</p>
+    </div>
+   </Content>
+   </>
 };
