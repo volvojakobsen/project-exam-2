@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import React, { useState, useEffect  } from "react";
+import { Booking } from "./bookings";
+import { Venues } from "./venues";
 
 const HeaderTitle = styled.h1`
 text-align: center;
@@ -11,6 +13,16 @@ flex-direction: row;
 justify-content: space-evenly;
 align-items: center;
 width: 100%;
+border-bottom: 5px solid black;
+`
+
+const BookingsContainer = styled.div`
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+align-items: center;
+width: 100%;
+border-bottom: 5px solid black;
 `
 
 const ProfileImage = styled.img`
@@ -25,6 +37,8 @@ export const Profile = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
     const [profile, setProfile] = useState([]);
+    const [bookings, setBookings] = useState([]);
+    const [venues, setVenues] = useState([]);
     const [avatar, setAvatar] = useState(null);
 
     const name = localStorage.getItem("name");
@@ -37,7 +51,7 @@ export const Profile = () => {
         try {
           setIsError(false);
           setIsLoading(true);
-          const response = await fetch(`https://api.noroff.dev/api/v1/holidaze/profiles/${name}`, {
+          const response = await fetch(`https://api.noroff.dev/api/v1/holidaze/profiles/${name}?_bookings=true&_venues=true`, {
             headers: {
                 "Content-Type": "application/json",
                 "Authorization": `bearer ${localStorage.getItem("accessToken")}`
@@ -45,6 +59,8 @@ export const Profile = () => {
         });
           const json = await response.json();
           setProfile(json);
+          setBookings(json.bookings)
+          setVenues(json.venues)
           setIsLoading(false);
         } catch (error) {
           setIsLoading(false);
@@ -105,6 +121,19 @@ async function changeAvatar(e) {
             </form>
         </div>
     </ProfileContainer>
+    <HeaderTitle>My Bookings</HeaderTitle>
+    <BookingsContainer>
+          {bookings.map((booking,h) => (
+            <Booking key={h} data={booking}/>
+          ))}
+    </BookingsContainer>
+    <HeaderTitle>My Venues</HeaderTitle>
+    <BookingsContainer>
+          {venues.map((venue,k) => (
+            <Venues key={k} data={venue}/>
+          ))}
+        </BookingsContainer>
+
     </>
   )
 }
