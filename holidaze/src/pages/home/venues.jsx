@@ -27,7 +27,7 @@ export const Venues = (props) => {
         <VenueImage src={media} alt="venue image" srcSet="" />
         <h2>{name}</h2>
         <h4>{price}</h4>
-        <button className="view-btn" onClick={() => navigate(`/venueInfo/${id}`)}>View Item</button>
+        <button className="view-btn" onClick={() => navigate(`/venueInfo/${id}`)}>View Venue</button>
         <p>{description}</p>
     </Venue>);
 }
