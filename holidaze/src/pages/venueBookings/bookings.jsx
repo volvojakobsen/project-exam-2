@@ -1,4 +1,4 @@
-import React from "react";
+import React  from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { format } from "date-fns";
@@ -20,27 +20,28 @@ const VenueImage = styled.img`
     margin-top: 20px;
 `
 
-export const Booking = (props) => {
-    const {created, venue, dateFrom, dateTo} = props.data;
-    const navigate = useNavigate();
+export const Bookings = (props) => {
+    const {created, guests, dateFrom, dateTo} = props.data;
     const createdOn = new Date(created);
     const from = new Date(dateFrom);
     const to = new Date(dateTo);
     const formattedDateFrom = format(from, "MMMM do, yyyy");
     const formattedDateTo = format(to, "MMMM do, yyyy");
     const formattedCreatedOn = format(createdOn, "MMMM do, yyyy");
+    const navigate = useNavigate();
+ 
 
 
-   
+    
+    console.log(props);
+    
    
     return (<Venue>
-        <VenueImage src={venue.media} alt="venue image" srcSet="" />
-        <h2>{venue.name}</h2>
-        <p>booking created:</p>
-        <h2>{formattedCreatedOn}</h2>
-        <p>booked from:</p>
-        <h3>{formattedDateFrom}</h3>
-        <p>booked to:</p>
-        <h3>{formattedDateTo}</h3>
+        <h1>booked on: {formattedCreatedOn}</h1>
+        <h3>Guests: {guests}</h3>
+        <h3>Booked from: {formattedDateFrom}</h3>
+        <h3>Booked to: {formattedDateTo}</h3>
+        
+        
     </Venue>);
 }

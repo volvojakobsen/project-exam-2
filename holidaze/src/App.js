@@ -10,6 +10,7 @@ import { NewVenue } from "./pages/newVenue/newVenue.jsx";
 import { EditVenue } from "./pages/editVenue/editVenue";
 import { UpdateVenue } from "./pages/updateVenue/updateVenue";
 import { DeleteVenue } from "./pages/deleteVenue/deleteVenue";
+import { VenueBookings } from "./pages/venueBookings/venueBookings";
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/venueInfo/:id" element={<VenueInfo />} />
+          <Route path="/venueBookings/:id" element={<VenueBookings />} />
           <Route path="/loginCustomer" element={<LoginCustomer />} />
           <Route path="/register" element={<Register />} />
           <Route path="/profile" element={<Profile />} />

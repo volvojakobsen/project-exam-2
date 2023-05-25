@@ -27,7 +27,7 @@ export const Venues = (props) => {
 
 
     
-    console.log(id)
+    console.log(props);
     
    
     return (<Venue>
@@ -36,5 +36,6 @@ export const Venues = (props) => {
         <h3>{price}</h3>
         <button className="view-btn" onClick={() => navigate(`/updateVenue/${id}`)}>Edit Venue</button>
         <button className="view-btn" onClick={() => navigate(`/deleteVenue/${id}`)}>Delete Venue</button>
+        <button className="view-btn" onClick={() => navigate(`/VenueBookings/${id}`)}>view Bookings</button>
     </Venue>);
 }

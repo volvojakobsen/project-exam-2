@@ -119,7 +119,7 @@ async function changeAvatar(e) {
             <h5>{profile.email}</h5>
             <form action="" onSubmit={changeAvatar}>
                 <p>Change Avatar</p>
-                <input type="url" name="avatar" onChange={(e) => setAvatar(e.target.value)} required />
+                <input type="url" name="avatar" onChange={(e) => setAvatar(e.target.value)} />
                 <button type="submit">Submit</button>
             </form>
         </div>
