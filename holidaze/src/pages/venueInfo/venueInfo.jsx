@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import { DayPicker } from 'react-day-picker';
 import {  useNavigate } from "react-router-dom";
+import {  TopContainer, Loader  } from "../../components/divAndLoader"
 import 'react-day-picker/dist/style.css';
 
 
@@ -27,6 +28,15 @@ const Image = styled.img`
     object-fit: cover;
     margin-top: 20px;
 `
+
+const Form = styled.form`
+display: flex;
+flex-direction: column;
+width: 100%;
+align-items: center;
+justify-content: center;
+min-height: 40vh;
+`;
 
 
 
@@ -111,13 +121,14 @@ function handleSubmit(e)  {
 }
 
  
-   if (isLoading) {
-     return <div className="loader"></div>;
-   }
+if (isLoading) {
+  return <TopContainer><Loader></Loader></TopContainer>;
+}
+
  
-   if (isError) {
-     return <div>Error loading data</div>;
-   }
+if (isError) {
+ return <div>Error loading data</div>;
+}
 
    return <>
    <Content>
@@ -136,7 +147,7 @@ function handleSubmit(e)  {
       <p>{singleVenue.description}</p>
     </div>
     <div>
-      <form action="" className="loginCustomer" id="register-form" onSubmit={handleSubmit} >
+      <Form action="" className="loginCustomer" id="register-form" onSubmit={handleSubmit} >
           <h1>Book now</h1>
           <label htmlFor="dateFrom">Date from:</label>
           <input type="date" name="dateFrom"  required  onChange={(e) => setDateFrom(e.target.value)} />
@@ -145,7 +156,7 @@ function handleSubmit(e)  {
           <label htmlFor="guests">number of guests:</label>
           <input type="number" name="guests" required onChange={(e) => setGuests(parseInt(e.target.value))}/>
           <button type="submit">Register</button>
-      </form>
+      </Form>
     </div>
    </Content>
    </>

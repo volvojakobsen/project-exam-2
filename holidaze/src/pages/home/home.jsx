@@ -1,27 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import { Venues } from "./venues";
-import "./home.css";
 import styled from 'styled-components';
+import {  TopContainer, Loader  } from "../../components/divAndLoader"
 
 const Venue = styled.div`
-    width: 400px;
-    min-height: 600px;
-    display: flex;
-    flex-direction: column;
-    border: 3px solid black;
-    justify-content: center;
-    align-items: center;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+gap: 2rem;
 `;
 
-const TopContainer = styled.div`
+
+
+const Container = styled.div`
 display: flex;
 flex-direction: column;
-justify-content: space-evenly;
+justify-content: center;
 align-items: center;
 width: 100%;
-border-bottom: 5px solid black;
-margin-bottom: 10px;
-`;
+min-height: 100vh;
+`
 
 const HeaderTitle = styled.h1`
 text-align: center;
@@ -64,7 +63,7 @@ export const Home = () => {
 
   console.log(venues);
   if (isLoading) {
-    return <div className='loader'></div>;
+    return <TopContainer><Loader></Loader></TopContainer>;
   }
 
   if (isError) {
@@ -73,13 +72,14 @@ export const Home = () => {
 
   return (
     <>
+    <Container>
     <div className='main'>
       <HeaderTitle>Venues</HeaderTitle>
       <TopContainer className='search-div'>
           <p>search venues: </p>
           <InputMargin className='search-input' type="text" placeholder='search' onChange={(e) => setSearch(e.target.value)} />
       </TopContainer>
-      <div className='venues'>
+      <Venue>
           {venues.filter((val) => {
               if (search === "") {
                   return val
@@ -90,8 +90,10 @@ export const Home = () => {
           }).map((venue,i) => (
               <Venues key={i} data={venue}/>
           ))}
-      </div>
+      </Venue>
     </div>
+    </Container>
+    
     
     </>
     

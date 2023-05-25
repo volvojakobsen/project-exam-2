@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import React, {  useState, useEffect  } from "react";
 import {  useNavigate, useParams  } from "react-router-dom";
+import {  TopContainer, Loader  } from "../../components/divAndLoader"
 
 const VenueForm = styled.div`
 display: flex;
@@ -15,7 +16,10 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-`
+`;
+
+
+
 
 export const UpdateVenue = () => {
 
@@ -94,6 +98,10 @@ export const UpdateVenue = () => {
               addVenue();
         
         
+    }
+
+    if (isLoading) {
+      return <TopContainer><Loader></Loader></TopContainer>;
     }
 
     return (

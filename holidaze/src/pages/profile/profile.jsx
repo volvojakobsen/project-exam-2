@@ -3,6 +3,7 @@ import React, { useState, useEffect  } from "react";
 import { Booking } from "./bookings";
 import { Venues } from "./venues";
 import {  useNavigate  } from "react-router-dom";
+import {  TopContainer, Loader  } from "../../components/divAndLoader"
 
 const HeaderTitle = styled.h1`
 text-align: center;
@@ -26,6 +27,8 @@ width: 100%;
 border-bottom: 5px solid black;
 min-height: 100vh;
 `
+
+
 
 const BookingsContainer = styled.div`
 display: flex;
@@ -114,13 +117,12 @@ async function changeAvatar(e) {
 
 
 
-  if (isLoading) {
-    return <div className='loader'></div>;
-  }
-
-  if (isError) {
-    return <div>Error loading data</div>;
-  }
+if (isLoading) {
+  return <TopContainer><Loader></Loader></TopContainer>;
+}
+if (isError) {
+  return <div>Error loading data</div>;
+}
 
     
   return (

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import React, {  useState, useEffect  } from "react";
 import {  useNavigate, useParams, Link  } from "react-router-dom";
+import {  TopContainer, Loader  } from "../../components/divAndLoader"
 
 const VenueForm = styled.div`
 display: flex;
@@ -16,6 +17,8 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 `
+
+
 
 export const DeleteVenue = () => {
 
@@ -72,6 +75,15 @@ export const DeleteVenue = () => {
               addVenue();
         
         
+    }
+
+    if (isLoading) {
+      return <TopContainer><Loader></Loader></TopContainer>;
+    }
+    
+     
+    if (isError) {
+     return <div>Error loading data</div>;
     }
 
     return (

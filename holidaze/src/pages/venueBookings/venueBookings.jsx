@@ -1,11 +1,11 @@
 import React, {useState, useEffect, useContext} from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { differenceInCalendarDays, getDate, isWithinInterval, toDate, format } from 'date-fns';
 import { DayPicker } from 'react-day-picker';
-import {  useNavigate } from "react-router-dom";
 import 'react-day-picker/dist/style.css';
 import { Bookings } from "./bookings";
+import {  TopContainer, Loader  } from "../../components/divAndLoader"
 
 
 
@@ -40,7 +40,10 @@ const Image = styled.img`
     max-width: 400px;
     object-fit: cover;
     margin-top: 20px;
-`
+`;
+
+
+
 
 
 
@@ -127,13 +130,14 @@ function handleSubmit(e)  {
 }
 
  
-   if (isLoading) {
-     return <div className="loader"></div>;
-   }
+if (isLoading) {
+  return <TopContainer><Loader></Loader></TopContainer>;
+}
+
  
-   if (isError) {
-     return <div>Error loading data</div>;
-   }
+if (isError) {
+  return <div>Error loading data</div>;
+}
 
    return <>
    <Content>

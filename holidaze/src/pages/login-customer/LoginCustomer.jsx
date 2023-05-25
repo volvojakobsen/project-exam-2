@@ -1,6 +1,24 @@
 import React, {  useState  } from "react";
-import "./loginCustomer.css";
+import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
+
+const Container = styled.div`
+display: flex;
+flex-direction: column;
+width: 100%;
+align-items: center;
+justify-content: center;
+min-height: 100vh;
+`;
+
+const Form = styled.form`
+display: flex;
+flex-direction: column;
+width: 100%;
+align-items: center;
+justify-content: center;
+min-height: 40vh;
+`;
 
 export const LoginCustomer = () => {
 
@@ -51,20 +69,23 @@ export const LoginCustomer = () => {
     
     return (
         <>
+        <Container>
         <div>
-          <form action="" className="loginCustomer" onSubmit={handleSubmit}>
+          <Form action="" className="loginCustomer" onSubmit={handleSubmit}>
               <h1>Login</h1>
               <label htmlFor="Username">Email:</label>
               <input type="email" name="email" onChange={(e) => setEmail(e.target.value)} />
               <label htmlFor="Password">Password:</label>
               <input type="text" name="Password" onChange={(e) => setPassword(e.target.value)} />
               <button type="submit">Login</button>
-          </form>
+          </Form>
         </div>
-        <div className="center">
+        <div>
             <h2>Register new account</h2>
             <Link  to="/Register"> <p className="link">Register new account here.</p> </Link>
         </div>
+        </Container>
+        
         
         </>
     );
