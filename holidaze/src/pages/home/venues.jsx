@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { ButtonBlue } from "../../components/button";
 
 const Venue = styled.div`
     width: 400px;
@@ -27,7 +28,7 @@ export const Venues = (props) => {
         <VenueImage src={media} alt="venue image" srcSet="" />
         <h2>{name}</h2>
         <h4>{price}</h4>
-        <button className="view-btn" onClick={() => navigate(`/venueInfo/${id}`)}>View Venue</button>
+        <ButtonBlue className="view-btn" onClick={() => navigate(`/venueInfo/${id}`)}>View Venue</ButtonBlue>
         <p>{description}</p>
     </Venue>);
 }

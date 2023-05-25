@@ -4,8 +4,7 @@ import styled from "styled-components";
 import { format } from "date-fns";
 
 const Venue = styled.div`
-    width: 200px;
-    min-height: 200px;
+    width: 400px;
     display: flex;
     flex-direction: column;
     border: 3px solid black;
@@ -13,12 +12,7 @@ const Venue = styled.div`
     align-items: center;
 `;
 
-const VenueImage = styled.img`
-    max-height: 200px;
-    max-width: 200px;
-    object-fit: cover;
-    margin-top: 20px;
-`
+
 
 export const Bookings = (props) => {
     const {created, guests, dateFrom, dateTo} = props.data;

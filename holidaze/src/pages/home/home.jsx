@@ -13,6 +13,22 @@ const Venue = styled.div`
     align-items: center;
 `;
 
+const TopContainer = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+align-items: center;
+width: 100%;
+border-bottom: 5px solid black;
+margin-bottom: 10px;
+`;
+
+const HeaderTitle = styled.h1`
+text-align: center;
+`
+const InputMargin = styled.input`
+margin-bottom: 10px;
+`
 
 
 const url = `https://api.noroff.dev/api/v1/holidaze/venues?sortOrder=asc`;
@@ -58,11 +74,11 @@ export const Home = () => {
   return (
     <>
     <div className='main'>
-      <h1>Venues</h1>
-      <div className='search-div'>
+      <HeaderTitle>Venues</HeaderTitle>
+      <TopContainer className='search-div'>
           <p>search venues: </p>
-          <input className='search-input' type="text" placeholder='search' onChange={(e) => setSearch(e.target.value)} />
-      </div>
+          <InputMargin className='search-input' type="text" placeholder='search' onChange={(e) => setSearch(e.target.value)} />
+      </TopContainer>
       <div className='venues'>
           {venues.filter((val) => {
               if (search === "") {

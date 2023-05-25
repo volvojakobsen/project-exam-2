@@ -34,6 +34,7 @@ export const LoginCustomer = () => {
                 localStorage.setItem("email", json.email);
                 console.log(json);
                 navigate("/");
+                window.location.reload(true);
               }
               else {
                   alert(json.errors[0].message);

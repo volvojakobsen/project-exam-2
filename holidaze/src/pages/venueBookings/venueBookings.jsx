@@ -17,6 +17,18 @@ justify-content: center;
 align-items: center;
 `;
 
+const TextCenter = styled.h2`
+text-align: center;
+`;
+
+const BookingContainer = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+gap: 10px;
+`;
+
 const Row = styled.div`
 display: flex;
 justify-content: center;
@@ -135,12 +147,12 @@ function handleSubmit(e)  {
         <p>max guests: {singleVenue.maxGuests}</p>
       </Row>
     </div>
-    <div>
-        <h2>Bookings</h2>
+   </Content>
+   <TextCenter>Bookings</TextCenter>
+   <BookingContainer>
         {bookings.map((booking,u) => (
             <Bookings key={u} data={booking}/>
           ))}
-    </div>
-   </Content>
+    </BookingContainer>
    </>
 };

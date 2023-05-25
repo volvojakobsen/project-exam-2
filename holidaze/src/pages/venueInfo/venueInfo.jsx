@@ -1,7 +1,6 @@
-import React, {useState, useEffect, useContext} from "react";
+import React, {useState, useEffect} from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
-import { differenceInCalendarDays, getDate, isWithinInterval, toDate, format } from 'date-fns';
 import { DayPicker } from 'react-day-picker';
 import {  useNavigate } from "react-router-dom";
 import 'react-day-picker/dist/style.css';
@@ -66,8 +65,6 @@ export const VenueInfo = () => {
      getData();
    }, [id.id]);
 
-  
-   console.log(id.id)
    
 
    

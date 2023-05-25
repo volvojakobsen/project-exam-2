@@ -12,11 +12,6 @@ export const Footer = () => {
             <p>Phone: 999-888-555</p>
             <p>Mail: support@holidaze.gov</p>
         </div>
-        <div>
-            <h4>links</h4>
-            <button className="contact-btn">Contact Page</button>
-            
-        </div>
     </div>
     </>
 };

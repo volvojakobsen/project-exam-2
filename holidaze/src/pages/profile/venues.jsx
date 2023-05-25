@@ -2,6 +2,7 @@ import React  from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { format } from "date-fns";
+import { Button, ButtonRed, ButtonBlue } from "../../components/button.jsx";
 
 const Venue = styled.div`
     width: 200px;
@@ -34,8 +35,8 @@ export const Venues = (props) => {
         <VenueImage src={media} alt="venue image" srcSet="" />
         <h1>{name}</h1>
         <h3>{price}</h3>
-        <button className="view-btn" onClick={() => navigate(`/updateVenue/${id}`)}>Edit Venue</button>
-        <button className="view-btn" onClick={() => navigate(`/deleteVenue/${id}`)}>Delete Venue</button>
-        <button className="view-btn" onClick={() => navigate(`/VenueBookings/${id}`)}>view Bookings</button>
+        <Button className="view-btn" onClick={() => navigate(`/updateVenue/${id}`)}>Edit Venue</Button>
+        <ButtonRed className="view-btn" onClick={() => navigate(`/deleteVenue/${id}`)}>Delete Venue</ButtonRed>
+        <ButtonBlue className="view-btn" onClick={() => navigate(`/VenueBookings/${id}`)}>view Bookings</ButtonBlue>
     </Venue>);
 }

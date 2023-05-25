@@ -17,6 +17,16 @@ width: 100%;
 border-bottom: 5px solid black;
 `
 
+const Container = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+align-items: center;
+width: 100%;
+border-bottom: 5px solid black;
+min-height: 100vh;
+`
+
 const BookingsContainer = styled.div`
 display: flex;
 flex-direction: row;
@@ -47,6 +57,7 @@ export const Profile = () => {
     const formValues = {avatar};
 
     const navigate = useNavigate();
+
   
 
     useEffect(() => {
@@ -101,6 +112,8 @@ async function changeAvatar(e) {
 }
 
 
+
+
   if (isLoading) {
     return <div className='loader'></div>;
   }
@@ -108,9 +121,11 @@ async function changeAvatar(e) {
   if (isError) {
     return <div>Error loading data</div>;
   }
+
     
   return (
     <>
+    <Container>
     <HeaderTitle>Profile</HeaderTitle>
     <ProfileContainer>
         <div><ProfileImage src={profile.avatar} alt="" /></div>
@@ -136,6 +151,8 @@ async function changeAvatar(e) {
             <Venues key={k} data={venue}/>
           ))}
         </BookingsContainer>
+    </Container>
+    
 
     </>
   )
