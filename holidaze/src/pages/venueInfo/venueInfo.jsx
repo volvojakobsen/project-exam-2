@@ -66,8 +66,8 @@ export const VenueInfo = () => {
      getData();
    }, [id.id]);
 
-   
-
+  
+   console.log(id.id)
    
 
    

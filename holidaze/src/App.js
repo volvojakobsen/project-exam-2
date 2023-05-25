@@ -8,6 +8,8 @@ import { Register } from "./pages/register/register";
 import { Profile } from "./pages/profile/profile";
 import { NewVenue } from "./pages/newVenue/newVenue.jsx";
 import { EditVenue } from "./pages/editVenue/editVenue";
+import { UpdateVenue } from "./pages/updateVenue/updateVenue";
+import { DeleteVenue } from "./pages/deleteVenue/deleteVenue";
 
 function App() {
 
@@ -24,7 +26,8 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/newVenue" element={<NewVenue />} />
-          <Route path="/editVenue" element={<EditVenue />} />
+          <Route path="/updateVenue/:id" element={<UpdateVenue />} />
+          <Route path="/deleteVenue/:id" element={<DeleteVenue />} />
         </Routes>
         <Footer />
       </Router>

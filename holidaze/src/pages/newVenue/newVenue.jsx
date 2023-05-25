@@ -33,6 +33,8 @@ export const NewVenue = () => {
     
     const navigate = useNavigate();
 
+    
+
     function handleSubmit(e)  {
         e.preventDefault();
         const formValues = {name, description, media, price, maxGuests};

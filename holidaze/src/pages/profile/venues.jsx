@@ -1,4 +1,4 @@
-import React from "react";
+import React  from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { format } from "date-fns";
@@ -21,16 +21,20 @@ const VenueImage = styled.img`
 `
 
 export const Venues = (props) => {
-    const {media, name, price, maxGuests, description} = props.data;
+    const {media, name, price, maxGuests, description, id} = props.data;
     const navigate = useNavigate();
+ 
 
 
-    console.log(props)
+    
+    console.log(id)
     
    
     return (<Venue>
         <VenueImage src={media} alt="venue image" srcSet="" />
         <h1>{name}</h1>
         <h3>{price}</h3>
+        <button className="view-btn" onClick={() => navigate(`/updateVenue/${id}`)}>Edit Venue</button>
+        <button className="view-btn" onClick={() => navigate(`/deleteVenue/${id}`)}>Delete Venue</button>
     </Venue>);
 }

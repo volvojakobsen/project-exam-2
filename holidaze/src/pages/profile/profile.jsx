@@ -2,6 +2,7 @@ import styled from "styled-components";
 import React, { useState, useEffect  } from "react";
 import { Booking } from "./bookings";
 import { Venues } from "./venues";
+import {  useNavigate  } from "react-router-dom";
 
 const HeaderTitle = styled.h1`
 text-align: center;
@@ -44,6 +45,8 @@ export const Profile = () => {
     const name = localStorage.getItem("name");
     const method = "put";
     const formValues = {avatar};
+
+    const navigate = useNavigate();
   
 
     useEffect(() => {
