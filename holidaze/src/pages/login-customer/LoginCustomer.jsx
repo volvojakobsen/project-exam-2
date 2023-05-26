@@ -76,7 +76,6 @@ export const LoginCustomer = () => {
                 localStorage.setItem("avatar", json.avatar);
                 localStorage.setItem("venueManager", json.venueManager);
                 localStorage.setItem("email", json.email);
-                console.log(json);
                 navigate("/");
                 window.location.reload(true);
               }
