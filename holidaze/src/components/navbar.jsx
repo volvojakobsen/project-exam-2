@@ -58,6 +58,7 @@ export const Navbar = () => {
     }
     
     if (localStorage.getItem("accessToken")) {
+
         return (
             <NavbarContainer className="navbar">
                 <Title>Holidaze</Title>
@@ -68,8 +69,10 @@ export const Navbar = () => {
                     <Link id="logoutButton" onClick={logout}><Text>Logout</Text></Link>
                 </Links>
             </NavbarContainer>
-        )
+        )    
     }
+    
+
     else {
         return (
             <NavbarContainer>

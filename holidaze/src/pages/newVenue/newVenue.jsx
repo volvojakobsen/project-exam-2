@@ -41,7 +41,7 @@ export const NewVenue = () => {
 
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
-    const [mediaRaw, setMediaRaw] = useState([]);
+    const [mediaRaw, setMediaRaw] = useState("");
     const [priceRaw, setPriceRaw] = useState(Number);
     const [maxGuestsRaw, setMaxGuestsRaw] = useState(Number);
 
