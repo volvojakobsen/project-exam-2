@@ -16,6 +16,8 @@ justify-content: space-evenly;
 align-items: center;
 width: 100%;
 border-bottom: 5px solid black;
+flex-wrap: wrap;
+margin: 20px;
 `
 
 const Container = styled.div`
@@ -33,7 +35,9 @@ min-height: 100vh;
 const BookingsContainer = styled.div`
 display: flex;
 flex-direction: row;
-justify-content: space-evenly;
+flex-wrap: wrap;
+gap: 10px;
+justify-content: center;
 align-items: center;
 width: 100%;
 border-bottom: 5px solid black;
@@ -44,6 +48,22 @@ const ProfileImage = styled.img`
     max-width: 400px;
     object-fit: cover;
     margin-top: 20px;
+
+    @media (max-width: 400px;) {
+      max-width: 200px;
+      max-height: 200px;
+    }
+`
+
+const Form = styled.form`
+margin: 20px;
+`
+
+const Flex = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
 `
 
 export const Profile = () => {
@@ -130,16 +150,16 @@ if (isError) {
     <Container>
     <HeaderTitle>Profile</HeaderTitle>
     <ProfileContainer>
-        <div><ProfileImage src={profile.avatar} alt="" /></div>
-        <div>
+        <div><ProfileImage src={profile.avatar} alt="profile-image" /></div>
+        <Flex>
             <h2>{profile.name}</h2>
             <h5>{profile.email}</h5>
-            <form action="" onSubmit={changeAvatar}>
+            <Form action="" onSubmit={changeAvatar}>
                 <p>Change Avatar</p>
                 <input type="url" name="avatar" onChange={(e) => setAvatar(e.target.value)} />
                 <button type="submit">Submit</button>
-            </form>
-        </div>
+            </Form>
+        </Flex>
     </ProfileContainer>
     <HeaderTitle>My Bookings</HeaderTitle>
     <BookingsContainer>
@@ -152,7 +172,7 @@ if (isError) {
           {venues.map((venue,k) => (
             <Venues key={k} data={venue}/>
           ))}
-        </BookingsContainer>
+    </BookingsContainer>
     </Container>
     
 

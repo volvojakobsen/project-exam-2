@@ -2,11 +2,48 @@ import React, {useContext} from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { Button, ButtonRedSmall, ButtonBlue } from "../components/button";
-import "./navbar.css"
 
+const Title = styled.h1`
+margin-left: 10px;
 
+`;
 
+const NavbarContainer = styled.nav`
+width: 100%;
+background-color: rgb(19,19,19);
+display: flex;
+justify-content: space-between;
+align-items: center;
+color: white;
 
+@media (max-width: 600px) {
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+`;
+
+const Links = styled.div`
+margin-right: 50px;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-wrap: wrap;
+
+@media (max-width: 565px) {
+    border: 3px solid white;
+}
+`;
+
+const Text = styled.p`
+text-decoration: none;
+color: white;
+font-size: 25px;
+margin-left: 20px;
+@media (max-width: 565px) {
+    text-decoration: underline;
+}
+`;
 
 export const Navbar = () => {
 
@@ -20,26 +57,26 @@ export const Navbar = () => {
     
     if (localStorage.getItem("accessToken")) {
         return (
-            <div className="navbar">
-                <h1 className="headerTitle">Holidaze</h1>
-                <div className="links">
-                    <Link  to="/"> <p className="link">Home</p> </Link>
-                    <Link  to="/profile"> <p>{localStorage.getItem("name")}</p> </Link>
-                    <Link  to="/newVenue"> <p>New Venue</p> </Link>
+            <NavbarContainer className="navbar">
+                <Title>Holidaze</Title>
+                <Links>
+                    <Link  to="/"> <Text>Home</Text> </Link>
+                    <Link  to="/profile"> <Text>{localStorage.getItem("name")}</Text> </Link>
+                    <Link  to="/newVenue"> <Text>New Venue</Text> </Link>
                     <ButtonRedSmall id="logoutButton" onClick={logout}>logout</ButtonRedSmall>
-                </div>
-            </div>
+                </Links>
+            </NavbarContainer>
         )
     }
     else {
         return (
-            <div className="navbar">
-                <h1 className="headerTitle">Holidaze</h1>
-                <div className="links">
-                    <Link  to="/"> <p className="link">Home</p> </Link>
-                    <Link  to="/loginCustomer" id="loginButton"> <p className="link login">Login</p> </Link>
-                </div>
-            </div>
+            <NavbarContainer>
+                <Title>Holidaze</Title>
+                <Links>
+                    <Link  to="/"> <Text>Home</Text> </Link>
+                    <Link  to="/loginCustomer" id="loginButton"> <Text>Login</Text> </Link>
+                </Links>
+            </NavbarContainer>
         )
     }
 

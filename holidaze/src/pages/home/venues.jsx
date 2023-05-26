@@ -11,6 +11,10 @@ const Venue = styled.div`
     border: 3px solid black;
     justify-content: center;
     align-items: center;
+
+    @media (max-width: 423px) {
+    width: 200px;
+}
 `;
 
 const VenueImage = styled.img`
@@ -18,6 +22,11 @@ const VenueImage = styled.img`
     max-width: 400px;
     object-fit: cover;
     margin-top: 20px;
+
+    @media (max-width: 423px) {
+    max-width: 200px;
+    max-height: 200px;
+}
 `
 
 export const Venues = (props) => {
