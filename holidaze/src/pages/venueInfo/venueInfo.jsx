@@ -69,6 +69,7 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 margin-left: 20px;
+gap: 20px;
 `;
 
 const Image = styled.img`
@@ -89,6 +90,10 @@ min-height: 40vh;
 
 const Div = styled.div`
 margin: 50px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
 `;
 
 
@@ -185,20 +190,20 @@ if (isError) {
       <Image src={singleVenue.media} alt="venue-image" srcSet="" />
     </div>
     <CalendarAndInfo>
-      <div>
+      <Div>
         <Text>{singleVenue.name}</Text>
         <Row>
           <TextMid>Price: {singleVenue.price}</TextMid>
           <TextMid>max guests: {singleVenue.maxGuests}</TextMid>
         </Row>
         <CalendarDiv>
-        <TextMid>Available dates</TextMid>
+        <Text>Available dates</Text>
         <DayPicker mode="single"
         hidden={disabledDays}
         />
         </CalendarDiv>
         <Paragraph>{singleVenue.description}</Paragraph>
-      </div>
+      </Div>
     </CalendarAndInfo>
     <Div>
       <Form action="" className="loginCustomer" id="register-form" onSubmit={handleSubmit} >
