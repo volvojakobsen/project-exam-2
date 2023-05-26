@@ -2,7 +2,6 @@ import styled from "styled-components";
 import React, {  useState, useEffect  } from "react";
 import {  useNavigate, useParams, Link  } from "react-router-dom";
 import {  TopContainer, Loader  } from "../../components/divAndLoader";
-import { ButtonRed } from "../../components/button";
 
 const VenueForm = styled.div`
 display: flex;
@@ -11,6 +10,20 @@ justify-content: center;
 align-items: center;
 min-height: 100vh;
 `
+
+const ButtonRed = styled.button`
+  background-color: #f44336; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px;
+  width: 200px;
+  cursor: pointer;
+  `;
 
 const Form = styled.form`
 display: flex;
@@ -51,7 +64,6 @@ export const DeleteVenue = () => {
         getData();
       }, [id.id]);
    
-      console.log(id)
 
     function handleSubmit(e)  {
         e.preventDefault();

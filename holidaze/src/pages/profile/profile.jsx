@@ -2,12 +2,25 @@ import styled from "styled-components";
 import React, { useState, useEffect  } from "react";
 import { Booking } from "./bookings";
 import { Venues } from "./venues";
-import {  useNavigate  } from "react-router-dom";
 import {  TopContainer, Loader  } from "../../components/divAndLoader"
 
 const HeaderTitle = styled.h1`
 text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Prompt:wght@700&family=Space+Grotesk:wght@500&display=swap');
+font-family: 'Prompt', sans-serif;
+font-size: 50px;
 `
+
+const Title = styled.h2`
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Prompt:wght@700&family=Space+Grotesk:wght@500&display=swap');
+font-family: 'Space Grotesk', sans-serif;
+`;
+
+const Paragraph = styled.p`
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Prompt:wght@700&display=swap');
+font-family: 'Comfortaa', cursive;
+    
+`;
 
 const ProfileContainer = styled.div`
 display: flex;
@@ -49,7 +62,7 @@ const ProfileImage = styled.img`
     object-fit: cover;
     margin-top: 20px;
 
-    @media (max-width: 400px;) {
+    @media (max-width: 400px) {
       max-width: 200px;
       max-height: 200px;
     }
@@ -79,7 +92,7 @@ export const Profile = () => {
     const method = "put";
     const formValues = {avatar};
 
-    const navigate = useNavigate();
+   
 
   
 
@@ -152,10 +165,10 @@ if (isError) {
     <ProfileContainer>
         <div><ProfileImage src={profile.avatar} alt="profile-image" /></div>
         <Flex>
-            <h2>{profile.name}</h2>
-            <h5>{profile.email}</h5>
+            <Title>{profile.name}</Title>
+            <Title>{profile.email}</Title>
             <Form action="" onSubmit={changeAvatar}>
-                <p>Change Avatar</p>
+                <Paragraph>Change Avatar</Paragraph>
                 <input type="url" name="avatar" onChange={(e) => setAvatar(e.target.value)} />
                 <button type="submit">Submit</button>
             </Form>

@@ -1,9 +1,6 @@
 import React, {useState, useEffect, useContext} from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { differenceInCalendarDays, getDate, isWithinInterval, toDate, format } from 'date-fns';
-import { DayPicker } from 'react-day-picker';
-import 'react-day-picker/dist/style.css';
 import { Bookings } from "./bookings";
 import {  TopContainer, Loader  } from "../../components/divAndLoader"
 
@@ -102,8 +99,6 @@ export const VenueBookings = () => {
    const to = `${bookings[i].dateTo}`;
    const dateFrom = {from: new Date(from.substring(0,4), from.substring(5, 7) - 1, from.substring(8, 10)), to: new Date(to.substring(0,4), to.substring(5, 7) - 1, to.substring(8, 10))};
    disabledDays.push(dateFrom);
-   //console.log(disabledDayFrom);
-   //console.log(from);
  
 };
 
@@ -121,7 +116,6 @@ function handleSubmit(e)  {
           body: JSON.stringify(formValues)
       });
       const json = await response.json();
-      console.log(response)
       if(response.ok) {
           alert("you have successfully booked this venue, you will now be redirected to the profile page.")
           navigate("/profile");
@@ -134,7 +128,6 @@ function handleSubmit(e)  {
     }                }
   
       register();
-  console.log(formValues);
   
 }
 

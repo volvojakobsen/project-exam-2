@@ -39,12 +39,7 @@ export const Bookings = (props) => {
     const formattedDateFrom = format(from, "MMMM do, yyyy");
     const formattedDateTo = format(to, "MMMM do, yyyy");
     const formattedCreatedOn = format(createdOn, "MMMM do, yyyy");
-    const navigate = useNavigate();
  
-
-
-    
-    console.log(props);
     
    
     return (<Venue>

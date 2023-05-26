@@ -1,5 +1,4 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { format } from "date-fns";
 
@@ -20,9 +19,20 @@ const VenueImage = styled.img`
     margin-top: 20px;
 `
 
+const Title = styled.h1`
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Prompt:wght@700&family=Space+Grotesk:wght@500&display=swap');
+text-align: center;
+font-family: 'Space Grotesk', sans-serif;
+`
+
+const Paragraph = styled.p`
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Prompt:wght@700&family=Space+Grotesk:wght@500&display=swap');
+font-family: 'Comfortaa', cursive;
+`
+
+
 export const Booking = (props) => {
     const {created, venue, dateFrom, dateTo} = props.data;
-    const navigate = useNavigate();
     const createdOn = new Date(created);
     const from = new Date(dateFrom);
     const to = new Date(dateTo);
@@ -35,12 +45,12 @@ export const Booking = (props) => {
    
     return (<Venue>
         <VenueImage src={venue.media} alt="venue image" srcSet="" />
-        <h2>{venue.name}</h2>
-        <p>booking created:</p>
-        <h2>{formattedCreatedOn}</h2>
-        <p>booked from:</p>
-        <h3>{formattedDateFrom}</h3>
-        <p>booked to:</p>
-        <h3>{formattedDateTo}</h3>
+        <Title>{venue.name}</Title>
+        <Paragraph>booking created:</Paragraph>
+        <Title>{formattedCreatedOn}</Title>
+        <Paragraph>booked from:</Paragraph>
+        <Title>{formattedDateFrom}</Title>
+        <Paragraph>booked to:</Paragraph>
+        <Title>{formattedDateTo}</Title>
     </Venue>);
 }

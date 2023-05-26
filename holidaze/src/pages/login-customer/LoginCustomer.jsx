@@ -1,7 +1,7 @@
 import React, {  useState  } from "react";
 import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
-import { Button } from "../../components/button";
+
 
 const Container = styled.div`
 display: flex;
@@ -12,6 +12,25 @@ justify-content: center;
 min-height: 100vh;
 `;
 
+export const Button = styled.button`
+background-color: #4CAF50; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  width: 200px;
+  cursor: pointer;
+  margin: 20px;
+  `;
+
+const Paragraph = styled.p`
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Prompt:wght@700&family=Space+Grotesk:wght@500&display=swap');
+font-family: 'Comfortaa', cursive;
+`
+
 const Form = styled.form`
 display: flex;
 flex-direction: column;
@@ -20,6 +39,13 @@ align-items: center;
 justify-content: center;
 min-height: 40vh;
 `;
+
+const Title = styled.h1`
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Prompt:wght@700&family=Space+Grotesk:wght@500&display=swap');
+text-align: center;
+font-family: 'Space Grotesk', sans-serif;
+`
+
 
 export const LoginCustomer = () => {
 
@@ -63,7 +89,6 @@ export const LoginCustomer = () => {
             }                }
           
               login();
-          console.log(formValues);
         
     }
     
@@ -73,7 +98,7 @@ export const LoginCustomer = () => {
         <Container>
         <div>
           <Form action="" className="loginCustomer" onSubmit={handleSubmit}>
-              <h1>Login</h1>
+              <Title>Login</Title>
               <label htmlFor="Username">Email:</label>
               <input type="email" name="email" onChange={(e) => setEmail(e.target.value)} />
               <label htmlFor="Password">Password:</label>
@@ -82,8 +107,8 @@ export const LoginCustomer = () => {
           </Form>
         </div>
         <div>
-            <h2>Register new account</h2>
-            <Link  to="/Register"> <p className="link">Register new account here.</p> </Link>
+            <Title>Register new account</Title>
+            <Link  to="/Register"> <Paragraph className="link">Register new account here.</Paragraph> </Link>
         </div>
         </Container>
         

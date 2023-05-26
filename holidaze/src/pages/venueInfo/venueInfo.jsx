@@ -7,9 +7,39 @@ import {  TopContainer, Loader  } from "../../components/divAndLoader"
 import 'react-day-picker/dist/style.css';
 
 const Text = styled.h1`
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Prompt:wght@700&family=Space+Grotesk:wght@500&display=swap');
 text-align: center;
+font-family: 'Prompt', sans-serif;
 `;
 
+const TextMid = styled.h2`
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Prompt:wght@700&family=Space+Grotesk:wght@500&display=swap');
+font-family: 'Space Grotesk', sans-serif;
+`;
+
+const Label = styled.label`
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Prompt:wght@700&family=Space+Grotesk:wght@500&display=swap');
+font-family: 'Space Grotesk', sans-serif;
+`;
+
+const Paragraph = styled.p`
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Prompt:wght@700&display=swap');
+font-family: 'Comfortaa', cursive;
+`;
+
+export const ButtonBlue = styled.button`
+  background-color: #008CBA; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  width: 200px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10px;
+  `;
 
 
 const Content = styled.div`
@@ -18,15 +48,21 @@ justify-content: center;
 align-items: center;
 flex-wrap: wrap;
 
-@media (max-width: 850;) {
+@media (max-width: 850) {
   flex-direction: column;
 }
 `;
 
 const CalendarAndInfo = styled.div`
 margin: 50px;
-
 `;
+
+const CalendarDiv = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+`
 
 const Row = styled.div`
 display: flex;
@@ -51,7 +87,7 @@ justify-content: center;
 min-height: 40vh;
 `;
 
-const FormDiv = styled.form`
+const Div = styled.div`
 margin: 50px;
 `;
 
@@ -101,8 +137,6 @@ export const VenueInfo = () => {
    const to = `${bookings[i].dateTo}`;
    const dateFrom = {from: new Date(from.substring(0,4), from.substring(5, 7) - 1, from.substring(8, 10)), to: new Date(to.substring(0,4), to.substring(5, 7) - 1, to.substring(8, 10))};
    disabledDays.push(dateFrom);
-   //console.log(disabledDayFrom);
-   //console.log(from);
  
 };
 
@@ -120,7 +154,6 @@ function handleSubmit(e)  {
           body: JSON.stringify(formValues)
       });
       const json = await response.json();
-      console.log(response)
       if(response.ok) {
           alert("you have successfully booked this venue, you will now be redirected to the profile page.")
           navigate("/profile");
@@ -133,7 +166,6 @@ function handleSubmit(e)  {
     }                }
   
       register();
-  console.log(formValues);
   
 }
 
@@ -156,28 +188,30 @@ if (isError) {
       <div>
         <Text>{singleVenue.name}</Text>
         <Row>
-          <h2>Price: {singleVenue.price}</h2>
-          <p>max guests: {singleVenue.maxGuests}</p>
+          <TextMid>Price: {singleVenue.price}</TextMid>
+          <TextMid>max guests: {singleVenue.maxGuests}</TextMid>
         </Row>
-        <h2>Available dates</h2>
+        <CalendarDiv>
+        <TextMid>Available dates</TextMid>
         <DayPicker mode="single"
         hidden={disabledDays}
         />
-        <p>{singleVenue.description}</p>
+        </CalendarDiv>
+        <Paragraph>{singleVenue.description}</Paragraph>
       </div>
     </CalendarAndInfo>
-    <FormDiv>
+    <Div>
       <Form action="" className="loginCustomer" id="register-form" onSubmit={handleSubmit} >
-          <h1>Book now</h1>
-          <label htmlFor="dateFrom">Date from:</label>
+          <Text>Book now</Text>
+          <Label htmlFor="dateFrom">Date from:</Label>
           <input type="date" name="dateFrom"  required  onChange={(e) => setDateFrom(e.target.value)} />
-          <label htmlFor="dateTo">dateTo:</label>
+          <Label htmlFor="dateTo">dateTo:</Label>
           <input type="date" required onChange={(e) => setDateTo(e.target.value)}/>
-          <label htmlFor="guests">number of guests:</label>
+          <Label htmlFor="guests">number of guests:</Label>
           <input type="number" name="guests" required onChange={(e) => setGuests(parseInt(e.target.value))}/>
-          <button type="submit">Register</button>
+          <ButtonBlue type="submit">Book Now</ButtonBlue>
       </Form>
-    </FormDiv>
+    </Div>
    </Content>
    </>
 };

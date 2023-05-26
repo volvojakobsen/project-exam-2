@@ -2,7 +2,7 @@ import styled from "styled-components";
 import React, {  useState, useEffect  } from "react";
 import {  useNavigate, useParams  } from "react-router-dom";
 import {  TopContainer, Loader  } from "../../components/divAndLoader"
-import { Button } from "../../components/button";
+
 
 const VenueForm = styled.div`
 display: flex;
@@ -11,6 +11,20 @@ justify-content: center;
 align-items: center;
 min-height: 100vh;
 `
+
+const Button = styled.button`
+background-color: #4CAF50; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  width: 200px;
+  cursor: pointer;
+  margin: 20px;
+  `;
 
 const Form = styled.form`
 display: flex;
@@ -67,7 +81,6 @@ export const UpdateVenue = () => {
         getData();
       }, [id.id]);
    
-      console.log(id)
 
     function handleSubmit(e)  {
         e.preventDefault();
@@ -84,7 +97,6 @@ export const UpdateVenue = () => {
                   body: JSON.stringify(formValues)
               });
               const json = await response.json();
-              console.log(response)
               if(response.ok) {
                   alert("venue was successfully created, you will now be redirected to the profile page.")
                   navigate("/profile");

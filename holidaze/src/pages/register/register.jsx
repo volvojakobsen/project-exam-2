@@ -1,7 +1,8 @@
 import React, {  useState  } from "react";
 import {  useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { Button } from "../../components/button";
+
+
 
 const Form = styled.form`
 display: flex;
@@ -13,12 +14,33 @@ min-height: 40vh;
 margin: 20px;
 `;
 
+export const Button = styled.button`
+background-color: #4CAF50; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  width: 200px;
+  cursor: pointer;
+  margin: 20px;
+  `;
+
 const Flex = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
 flex-direction: column;
 `
+
+const Title = styled.h1`
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Prompt:wght@700&family=Space+Grotesk:wght@500&display=swap');
+text-align: center;
+font-family: 'Space Grotesk', sans-serif;
+`
+
 
 export const Register = () => {
 
@@ -48,7 +70,6 @@ export const Register = () => {
                     body: JSON.stringify(formValues)
                 });
                 const json = await response.json();
-                console.log(response)
                 if(response.ok) {
                     alert("your account was registered, you will now be redirected to the login page.")
                     navigate("/loginCustomer");
@@ -61,7 +82,6 @@ export const Register = () => {
               }                }
             
                 register();
-            console.log(formValues);
             
         }
         else {
@@ -74,7 +94,7 @@ export const Register = () => {
         <>
         <Flex>
           <Form action="" id="register-form" onSubmit={handleSubmit} >
-              <h1>Register</h1>
+              <Title>Register</Title>
               <label htmlFor="name">Username:</label>
               <input type="text" name="name" id="name" pattern="^[\w]+$" required title="User name must only contain lower case and upper case letters, numbers and underscore (_). Example: My_user123." onChange={(e) => setName(e.target.value)} />
               <label htmlFor="email">Email:</label>

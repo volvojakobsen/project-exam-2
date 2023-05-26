@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { Button, ButtonRedSmall, ButtonBlue } from "../components/button";
@@ -8,7 +8,6 @@ const Title = styled.h1`
 margin-left: 10px;
 font-family: 'Prompt', sans-serif;
 font-size: 50px;
-
 `;
 
 const NavbarContainer = styled.nav`
@@ -66,7 +65,7 @@ export const Navbar = () => {
                     <Link  to="/"> <Text>Home</Text> </Link>
                     <Link  to="/profile"> <Text>{localStorage.getItem("name")}</Text> </Link>
                     <Link  to="/newVenue"> <Text>New Venue</Text> </Link>
-                    <ButtonRedSmall id="logoutButton" onClick={logout}>Logout</ButtonRedSmall>
+                    <Link id="logoutButton" onClick={logout}><Text>Logout</Text></Link>
                 </Links>
             </NavbarContainer>
         )

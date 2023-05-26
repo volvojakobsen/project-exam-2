@@ -10,6 +10,26 @@ align-items: center;
 min-height: 100vh;
 `
 
+const Button = styled.button`
+background-color: #4CAF50; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  width: 200px;
+  cursor: pointer;
+  margin: 20px;
+  `;
+
+const Title = styled.h1`
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Prompt:wght@700&family=Space+Grotesk:wght@500&display=swap');
+text-align: center;
+font-family: 'Space Grotesk', sans-serif;
+`
+
 const Form = styled.form`
 display: flex;
 flex-direction: column;
@@ -71,7 +91,7 @@ export const NewVenue = () => {
     return (
         <>
         <VenueForm>
-        <h1>Add new venue</h1>
+        <Title>Add new venue</Title>
         <Form action="" onSubmit={handleSubmit}>
         <label htmlFor="name">name:</label>
               <input type="text" name="name" required onChange={(e) => setName(e.target.value)}/>
@@ -83,7 +103,7 @@ export const NewVenue = () => {
               <input type="number" name="price" required  onChange={(e) => setPriceRaw(e.target.value)}/>
               <label htmlFor="maxGuests">maxGuests:</label>
               <input type="number" name="maxGuests" required onChange={(e) => setMaxGuestsRaw(e.target.value)} />
-              <button type="submit">Submit</button>
+              <Button type="submit">Submit</Button>
         </Form>
         </VenueForm>
         </>

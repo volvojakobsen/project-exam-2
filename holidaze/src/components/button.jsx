@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components";
 
 export const Button = styled.button`
@@ -52,4 +53,5 @@ background-color: #4CAF50;
   width: 200px;
   font-size: 16px;
   cursor: pointer;
+  margin: 10px;
   `;

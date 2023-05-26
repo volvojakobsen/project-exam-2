@@ -23,11 +23,20 @@ min-height: 100vh;
 `
 
 const HeaderTitle = styled.h1`
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Prompt:wght@700&family=Space+Grotesk:wght@500&display=swap');
 text-align: center;
+font-family: 'Space Grotesk', sans-serif;
 `
 const InputMargin = styled.input`
 margin-bottom: 10px;
 `
+
+const Paragraph = styled.p`
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Prompt:wght@700&family=Space+Grotesk:wght@500&display=swap');
+font-family: 'Comfortaa', cursive;
+`
+
+
 
 
 const url = `https://api.noroff.dev/api/v1/holidaze/venues?sortOrder=asc`;
@@ -59,9 +68,6 @@ export const Home = () => {
     getData();
   }, []);
 
-
-
-  console.log(venues);
   if (isLoading) {
     return <TopContainer><Loader></Loader></TopContainer>;
   }
@@ -76,7 +82,7 @@ export const Home = () => {
     <div className='main'>
       <HeaderTitle>Venues</HeaderTitle>
       <TopContainer className='search-div'>
-          <p>search venues: </p>
+          <Paragraph>search venues: </Paragraph>
           <InputMargin className='search-input' type="text" placeholder='search' onChange={(e) => setSearch(e.target.value)} />
       </TopContainer>
       <Venue>
