@@ -2,6 +2,7 @@ import styled from "styled-components";
 import React, {  useState, useEffect  } from "react";
 import {  useNavigate, useParams  } from "react-router-dom";
 import {  TopContainer, Loader  } from "../../components/divAndLoader"
+import { Button } from "../../components/button";
 
 const VenueForm = styled.div`
 display: flex;
@@ -119,7 +120,7 @@ export const UpdateVenue = () => {
               <input type="number" name="price" required placeholder={singleVenue.price}  onChange={(e) => setPriceRaw(e.target.value)}/>
               <label htmlFor="maxGuests">maxGuests:</label>
               <input type="number" name="maxGuests" required placeholder={singleVenue.maxGuests} onChange={(e) => setMaxGuestsRaw(e.target.value)} />
-              <button type="submit">Submit</button>
+              <Button type="submit">Submit</Button>
         </Form>
         </VenueForm>
         </>

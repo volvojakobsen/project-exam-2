@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import React, {  useState, useEffect  } from "react";
 import {  useNavigate, useParams, Link  } from "react-router-dom";
-import {  TopContainer, Loader  } from "../../components/divAndLoader"
+import {  TopContainer, Loader  } from "../../components/divAndLoader";
+import { ButtonRed } from "../../components/button";
 
 const VenueForm = styled.div`
 display: flex;
@@ -91,7 +92,7 @@ export const DeleteVenue = () => {
         <VenueForm>
         <h1>Delete venue</h1>
         <h3>do you really want to delete {singleVenue.name}?</h3>
-        <button onClick={handleSubmit}>Delete</button>
+        <ButtonRed onClick={handleSubmit}>Delete</ButtonRed>
         <Link  to="/profile"> <p>Back</p> </Link>
         </VenueForm>
         </>

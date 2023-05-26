@@ -15,6 +15,9 @@ const Content = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
+flex-wrap: wrap;
+gap: 20px;
+border-bottom: 3px solid black;
 `;
 
 const TextCenter = styled.h2`
@@ -27,11 +30,13 @@ justify-content: center;
 align-items: center;
 flex-wrap: wrap;
 gap: 10px;
+border-top: 3px solid black;
 `;
 
 const Row = styled.div`
 display: flex;
-justify-content: center;
+justify-content: space-between;
+gap: 20px;
 align-items: center;
 `;
 
@@ -40,6 +45,10 @@ const Image = styled.img`
     max-width: 400px;
     object-fit: cover;
     margin-top: 20px;
+`;
+
+const Title = styled.h1`
+text-align: center;
 `;
 
 
@@ -145,7 +154,7 @@ if (isError) {
       <Image src={singleVenue.media} alt="venue-image" srcSet="" />
     </div>
     <div>
-      <h1>{singleVenue.name}</h1>
+      <Title>{singleVenue.name}</Title>
       <Row>
         <h2>Price: {singleVenue.price}</h2>
         <p>max guests: {singleVenue.maxGuests}</p>

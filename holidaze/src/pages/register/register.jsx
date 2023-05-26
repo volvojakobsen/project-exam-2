@@ -1,5 +1,24 @@
 import React, {  useState  } from "react";
 import {  useNavigate } from "react-router-dom";
+import styled from "styled-components";
+import { Button } from "../../components/button";
+
+const Form = styled.form`
+display: flex;
+flex-direction: column;
+width: 100%;
+align-items: center;
+justify-content: center;
+min-height: 40vh;
+margin: 20px;
+`;
+
+const Flex = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+`
 
 export const Register = () => {
 
@@ -53,8 +72,8 @@ export const Register = () => {
     
     return (
         <>
-        <div>
-          <form action="" className="loginCustomer" id="register-form" onSubmit={handleSubmit} >
+        <Flex>
+          <Form action="" id="register-form" onSubmit={handleSubmit} >
               <h1>Register</h1>
               <label htmlFor="name">Username:</label>
               <input type="text" name="name" id="name" pattern="^[\w]+$" required title="User name must only contain lower case and upper case letters, numbers and underscore (_). Example: My_user123." onChange={(e) => setName(e.target.value)} />
@@ -71,9 +90,9 @@ export const Register = () => {
               <input type="radio" name="venueManager" id="no" onChange={() => setVenueManager(false)}/>
               <label htmlFor="yes">Yes</label>
               <input type="radio" name="venueManager" id="yes" onChange={() => setVenueManager(true)}/>
-              <button type="submit">Register</button>
-          </form>
-        </div>
+              <Button type="submit">Register</Button>
+          </Form>
+        </Flex>
         
         
         </>

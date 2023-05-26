@@ -159,6 +159,7 @@ if (isError) {
           <h2>Price: {singleVenue.price}</h2>
           <p>max guests: {singleVenue.maxGuests}</p>
         </Row>
+        <h2>Available dates</h2>
         <DayPicker mode="single"
         hidden={disabledDays}
         />

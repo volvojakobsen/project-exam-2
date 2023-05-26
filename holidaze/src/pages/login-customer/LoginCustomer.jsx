@@ -1,6 +1,7 @@
 import React, {  useState  } from "react";
 import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
+import { Button } from "../../components/button";
 
 const Container = styled.div`
 display: flex;
@@ -77,7 +78,7 @@ export const LoginCustomer = () => {
               <input type="email" name="email" onChange={(e) => setEmail(e.target.value)} />
               <label htmlFor="Password">Password:</label>
               <input type="text" name="Password" onChange={(e) => setPassword(e.target.value)} />
-              <button type="submit">Login</button>
+              <Button type="submit">Login</Button>
           </Form>
         </div>
         <div>

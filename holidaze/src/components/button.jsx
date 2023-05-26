@@ -11,6 +11,7 @@ background-color: #4CAF50;
   font-size: 16px;
   width: 200px;
   cursor: pointer;
+  margin: 20px;
   `;
 
   export const ButtonRed = styled.button`

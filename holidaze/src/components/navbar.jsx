@@ -4,7 +4,10 @@ import styled from "styled-components";
 import { Button, ButtonRedSmall, ButtonBlue } from "../components/button";
 
 const Title = styled.h1`
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@700&display=swap');
 margin-left: 10px;
+font-family: 'Prompt', sans-serif;
+font-size: 50px;
 
 `;
 
@@ -63,7 +66,7 @@ export const Navbar = () => {
                     <Link  to="/"> <Text>Home</Text> </Link>
                     <Link  to="/profile"> <Text>{localStorage.getItem("name")}</Text> </Link>
                     <Link  to="/newVenue"> <Text>New Venue</Text> </Link>
-                    <ButtonRedSmall id="logoutButton" onClick={logout}>logout</ButtonRedSmall>
+                    <ButtonRedSmall id="logoutButton" onClick={logout}>Logout</ButtonRedSmall>
                 </Links>
             </NavbarContainer>
         )
