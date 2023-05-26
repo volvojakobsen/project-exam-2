@@ -70,7 +70,6 @@ export const LoginCustomer = () => {
                   body: JSON.stringify(formValues)
               });
               const json = await response.json();
-              console.log(response)
               if(response.ok) {
                 localStorage.setItem("name", json.name);
                 localStorage.setItem("accessToken", json.accessToken);
