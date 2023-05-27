@@ -1,4 +1,4 @@
-### project-exam-2
+# project-exam-2
 
 a exam project for my 4th semester at Noroff fagskole.
 
@@ -8,11 +8,11 @@ Is a site where users can find venues for renting and staying at.
 A registered customer is able to book a stay at the venues on this site.
 People can also register as a venue manager and rent out their own venues on this site.
 
-# Holidaze is hosted at:
+### Holidaze is hosted at:
 
 https://647203305650447ba7bef467--spiffy-custard-9a216d.netlify.app
 
-# Running
+### Running
 
 - date-fns 2.30.0
 - react 18.2.0
@@ -22,7 +22,7 @@ https://647203305650447ba7bef467--spiffy-custard-9a216d.netlify.app
 - react-scripts 5.0.1
 - styled-components 5.3.10
 
-# Installation
+### Installation
 
 - Download the project to your computer
 - Run the terminal in the Holidaze folder in the project.
