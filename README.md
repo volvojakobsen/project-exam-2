@@ -14,13 +14,13 @@ https://647203305650447ba7bef467--spiffy-custard-9a216d.netlify.app
 
 # Running
 
--date-fns 2.30.0
--react 18.2.0
--react-day-picker 8.7.1
--react-dom 18.2.0
--react-router-dom 6.11.0
--react-scripts 5.0.1
--styled-components 5.3.10
+- date-fns 2.30.0
+- react 18.2.0
+- react-day-picker 8.7.1
+- react-dom 18.2.0
+- react-router-dom 6.11.0
+- react-scripts 5.0.1
+- styled-components 5.3.10
 
 ### Installation
 
