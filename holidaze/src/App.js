@@ -7,7 +7,6 @@ import { LoginCustomer } from "./pages/login-customer/LoginCustomer";
 import { Register } from "./pages/register/register";
 import { Profile } from "./pages/profile/profile";
 import { NewVenue } from "./pages/newVenue/newVenue.jsx";
-import { EditVenue } from "./pages/editVenue/editVenue";
 import { UpdateVenue } from "./pages/updateVenue/updateVenue";
 import { DeleteVenue } from "./pages/deleteVenue/deleteVenue";
 import { VenueBookings } from "./pages/venueBookings/venueBookings";
