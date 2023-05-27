@@ -1,8 +1,8 @@
-## project-exam-2
+### project-exam-2
 
 a exam project for my 4th semester at Noroff fagskole.
 
-# Holidaze
+## Holidaze
 
 Is a site where users can find venues for renting and staying at.
 A registered customer is able to book a stay at the venues on this site.
@@ -22,11 +22,11 @@ https://647203305650447ba7bef467--spiffy-custard-9a216d.netlify.app
 - react-scripts 5.0.1
 - styled-components 5.3.10
 
-### Installation
+# Installation
 
--Download the project to your computer
--Run the terminal in the Holidaze folder in the project.
--type "npm run start" in the terminal.
+- Download the project to your computer
+- Run the terminal in the Holidaze folder in the project.
+- type "npm run start" in the terminal.
 
 if the browser does not launch automatically
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
