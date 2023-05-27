@@ -10,7 +10,7 @@ People can also register as a venue manager and rent out their own venues on thi
 
 # Holidaze is hosted at:
 
-https://647203305650447ba7bef467--spiffy-custard-9a216d.netlify.app/profile
+https://647203305650447ba7bef467--spiffy-custard-9a216d.netlify.app
 
 # Running
 
