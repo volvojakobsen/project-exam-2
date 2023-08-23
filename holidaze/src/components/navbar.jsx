@@ -8,6 +8,18 @@ const Title = styled.h1`
 margin-left: 10px;
 font-family: 'Prompt', sans-serif;
 font-size: 50px;
+
+@media (max-width: 240px) {
+   font-size: 40px;
+   
+}
+@media (max-width: 185px) {
+   font-size: 30px;
+}
+@media (max-width: 592px) {
+   font-size: 30px;
+   margin: 0px;
+}
 `;
 
 const NavbarContainer = styled.nav`
@@ -30,10 +42,11 @@ margin-right: 50px;
 display: flex;
 align-items: center;
 justify-content: center;
+text-align: center;
 flex-wrap: wrap;
 
-@media (max-width: 565px) {
-    border: 3px solid white;
+@media (max-width: 463px) {
+   margin-left: 30px;
 }
 `;
 
@@ -44,6 +57,9 @@ font-size: 25px;
 margin-left: 20px;
 @media (max-width: 565px) {
     text-decoration: underline;
+}
+@media (max-width: 465px) {
+    margin: 7px;
 }
 `;
 

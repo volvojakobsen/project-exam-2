@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Venues } from "./venues";
 import styled from 'styled-components';
-import {  TopContainer, Loader  } from "../../components/divAndLoader"
+import {  TopContainer, Loader, DivContainer  } from "../../components/divAndLoader"
 import { ButtonBlue } from '../venueInfo/venueInfo';
 
 const Venue = styled.div`
@@ -102,10 +102,14 @@ export const Home = () => {
     <div className='main'>
       <HeaderTitle>Venues</HeaderTitle>
       <TopContainer className='search-div'>
+        <DivContainer>
           <Paragraph>search venues: </Paragraph>
           <InputMargin className='search-input' type="text" placeholder='search' onChange={(e) => setSearch(e.target.value)} />
+        </DivContainer>
+        <DivContainer>
           <Paragraph>view venues from index:</Paragraph>
           <InputMargin placeholder='0' type="number" onChange={(e) => setOffset(e.target.value) & getVenues()}/>
+        </DivContainer>
       </TopContainer>
       
       <Venue>

@@ -25,3 +25,11 @@ margin-bottom: 10px;
     flex-direction: column;
 }
 `;
+
+export const DivContainer = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+margin: 10px;
+`;
