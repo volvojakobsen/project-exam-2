@@ -12,8 +12,6 @@ flex-wrap: wrap;
 gap: 2rem;
 `;
 
-
-
 const Container = styled.div`
 display: flex;
 flex-direction: column;

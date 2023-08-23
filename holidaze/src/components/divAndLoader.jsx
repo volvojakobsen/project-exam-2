@@ -14,10 +14,14 @@ animation: spin 2s linear infinite;
 
 export const TopContainer = styled.div`
 display: flex;
-flex-direction: column;
+flex-direction: row;
 justify-content: space-evenly;
 align-items: center;
 width: 100%;
 border-bottom: 5px solid black;
 margin-bottom: 10px;
+
+@media (max-width: 700px) {
+    flex-direction: column;
+}
 `;

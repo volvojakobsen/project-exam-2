@@ -13,7 +13,16 @@ const Venue = styled.div`
     margin-bottom: 10px;
 
     @media (max-width: 423px) {
+    width: 300px;
+}
+    @media (max-width: 310px) {
+    width: 250px;
+    height: 100%;
+}
+    @media (max-width: 256px) {
     width: 200px;
+    height: 100%;
+    text-align: center;
 }
 `;
 
