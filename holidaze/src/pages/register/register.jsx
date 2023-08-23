@@ -100,9 +100,9 @@ export const Register = () => {
               <label htmlFor="email">Email:</label>
               <input type="email" pattern="^[\w\-.]+@stud.noroff.no$" required title="Only @stud.noroff.no email addresses are allowed to register." onChange={(e) => setEmail(e.target.value)}/>
               <label htmlFor="Password">Password:</label>
-              <input type="text" name="Password" minLength={8} title="Must be at least 8 characters long." required onChange={(e) => setPassword(e.target.value)}/>
+              <input type="password" name="Password" minLength={8} title="Must be at least 8 characters long." required onChange={(e) => setPassword(e.target.value)}/>
               <label htmlFor="Password-2">Re Enter Password:</label>
-              <input type="text" name="Password-2" minLength={8} title="Must be at least 8 characters long." required onChange={(e) => setRePassword(e.target.value)} />
+              <input type="password" name="Password-2" minLength={8} title="Must be at least 8 characters long." required onChange={(e) => setRePassword(e.target.value)} />
               <label htmlFor="avatar">Avatar url</label>
               <input type="url" name="avatar" onChange={(e) => setAvatar(e.target.value)}/>
               <h4>Are you a venue manager?</h4>

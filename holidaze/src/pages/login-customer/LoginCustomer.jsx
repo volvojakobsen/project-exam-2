@@ -100,7 +100,7 @@ export const LoginCustomer = () => {
               <label htmlFor="Username">Email:</label>
               <input type="email" name="email" onChange={(e) => setEmail(e.target.value)} />
               <label htmlFor="Password">Password:</label>
-              <input type="text" name="Password" onChange={(e) => setPassword(e.target.value)} />
+              <input type="password" name="Password" onChange={(e) => setPassword(e.target.value)} />
               <Button type="submit">Login</Button>
           </Form>
         </div>
