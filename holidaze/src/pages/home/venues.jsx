@@ -5,12 +5,12 @@ import styled from "styled-components";
 
 const Venue = styled.div`
     width: 400px;
-    min-height: 600px;
+    height: 600px;
     display: flex;
     flex-direction: column;
     border: 3px solid black;
-    justify-content: center;
     align-items: center;
+    margin-bottom: 10px;
 
     @media (max-width: 423px) {
     width: 200px;
@@ -32,8 +32,8 @@ const ButtonBlue = styled.button`
   `;
 
 const VenueImage = styled.img`
-    max-height: 400px;
-    max-width: 400px;
+    height: 200px;
+    width: 400px;
     object-fit: cover;
     margin-top: 20px;
 
@@ -61,7 +61,7 @@ export const Venues = (props) => {
     return (<Venue>
         <VenueImage src={media} alt="venue image" srcSet="" />
         <Title>{name}</Title>
-        <h4>{price}</h4>
+        <h4>Price: {price} NOK</h4>
         <ButtonBlue className="view-btn" onClick={() => navigate(`/venueInfo/${id}`)}>View Venue</ButtonBlue>
         <Paragraph>{description}</Paragraph>
     </Venue>);
